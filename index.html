@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container"> 
+        <div class="row alert-msg">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <h3>ADD USER</h3>
+                <form id="addUser" action="">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="OrderNumber" placeholder="Order Number"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="UserName" placeholder="User Name"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="date" name="OrderDate" placeholder="Order Date"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="date" name="RequiredDate" placeholder="Required Date"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="date" name="ShippedDate" placeholder="Shipped Date"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="email" name="Email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="Status" placeholder="Status" required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="Contact" placeholder="Contact" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">  
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="street" placeholder="Street" required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="city" placeholder="City" required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="zipcode" placeholder="Zip Code"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary form-control" type="submit">SUBMIT</button>
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>USERS</h3>
+                <table id="userTable" class="table table-striped">
+                    <tr>
+                        <th>Order Number</th>
+                        <th>User Name</th>
+                        <th>Order Date</th>
+                        <th>Required Date</th>
+                        <th>Shipped Date</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Contact</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>Zip Code</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Update User</h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
