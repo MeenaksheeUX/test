@@ -1,7 +1,9 @@
 body {
-    background: #2c3e50;
-    color: white;
-    font-family: monospace;
+    /* background: white; */
+    background: #e2e1e0;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
 }
 
 input,
@@ -9,10 +11,13 @@ input,
     color: black;
 }
 
-.table-striped>tbody>tr:nth-child(2n + 1)>td,
+.form-control{
+    font-size: inherit !important;
+}
+/* .table-striped>tbody>tr:nth-child(2n + 1)>td,
 .table-striped>tbody>tr:nth-child(2n + 1)>th {
     background-color: #34495e;
-}
+} */
 
 .row .alert {
     margin-top: 25px;
@@ -24,11 +29,13 @@ td {
 }
 
 h3 {
-    background-color: #333;
+    background-color: #3F51B5;
+    color: white;
     padding: 12px;
     border-top-right-radius: 20px;
     font-weight: bolder;
-    letter-spacing: .1em;
+    font-size: 1rem !important;
+    /* letter-spacing: .1em; */
 }
 
 .modal-content {
@@ -37,9 +44,16 @@ h3 {
 
 .modal-header,
 .modal-footer {
-    background-color: #333;
+    background-color: #3F51B5;
     color: white;
     border: 0;
+    border-top-left-radius: 0rem !important;
+    border-top-right-radius: 0rem !important;
+}
+
+.modal-header .modal-title{
+    font-weight: bolder;
+    font-size: 1rem !important;
 }
 
 .modal-header .close {
@@ -48,8 +62,8 @@ h3 {
 }
 
 .modal-body {
-    background: #2c3e50;
-    color: white;
+    background: white;
+    color: black;
 }
 
 .close,
@@ -59,5 +73,19 @@ h3 {
 
 .btn {
     font-weight: bolder;
-    letter-spacing: .2em;
+    font-size: inherit !important;
+    /* letter-spacing: .2em; */
+}
+
+.card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+  
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }

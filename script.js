@@ -86,33 +86,54 @@ function editUser(id) {
         if (user.id == id) {
             $(".modal-body").empty().append(`
         <form id="updateUser" action="">
-            <label for="OrderNumber">Order Number</label>
+        <div class="row">
+        <div class="col-3">
             <input class="form-control" type="number" name="OrderNumber" value="${user.OrderNumber}"/>
-            <label for="UserName">User Name</label>
+        </div>
+        <div class="col-3">
             <input class="form-control" type="text" name="UserName" value="${user.UserName}"/>
-            <label for="OrderDate">Order Date</label>
-            <input class="form-control" type="date" name="OrderDate" value="${user.OrderDate}"/>
-            <label for="RequiredDate">Required Date</label>
-            <input class="form-control" type="date" name="RequiredDate" value="${user.RequiredDate}"/>
-            <label for="ShippedDate">Shipped Date</label>
-            <input class="form-control" type="date" name="ShippedDate" value="${user.ShippedDate}"/>
-            <label for="Email">Email</label>
+        </div>
+        <div class="col-3">
+            <input class="form-control" type="text" name="OrderDate"
+                onfocus="(this.type='date')" placeholder="Order Date" value="${user.OrderDate}"/>
+        </div>
+        <div class="col-3">
+            <input class="form-control" type="text" name="RequiredDate"
+                onfocus="(this.type='date')" placeholder="Required Date" value="${user.RequiredDate}"/>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-3">
+           <input class="form-control" type="text" name="ShippedDate"
+            onfocus="(this.type='date')" placeholder="Shipped Date" value="${user.ShippedDate}"/>
+        </div>
+        <div class="col-3">
             <input class="form-control" type="email" name="Email" value="${user.Email}"/>
-            <label for="Status">Status</label>
+        </div>
+        <div class="col-3">
             <input class="form-control" type="text" name="Status" value="${user.Status}"/>
-            <label for="Contact">Contact</label>
+        </div>
+        <div class="col-3">
             <input class="form-control" type="number" name="Contact" value="${user.Contact}"/>
-            <label for="street">Street</label>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-3">
             <input class="form-control" type="text" name="street" value="${user.street}"/>
-            <label for="city">City</label>
+        </div>
+        <div class="col-3">
             <input class="form-control" type="text" name="city" value="${user.city}"/>
-            <label for="zipcode">Zip Code</label>
+        </div>
+        <div class="col-3">
             <input class="form-control" type="number" name="zipcode" value="${user.zipcode}"/>
-
+        </div>
+        </div>
     `);
             $(".modal-footer").empty().append(`
-            <button type="button" type="submit" class="btn btn-primary" onClick="updateUser(${id})">Save changes</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" type="submit" class="btn btn-primary" onClick="updateUser(${id})">SAVE CHANGES</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
         </form>
     `);
         }
@@ -137,7 +158,7 @@ function updateUser(id) {
     user.id = id;
     users.forEach(function (user, i) {
         if (user.id == id) {
-            $("#updateUser").children("input").each(function () {
+            $("#updateUser").find("input").each(function () {
                 var value = $(this).val();
                 var attr = $(this).attr("name");
                 if (attr == "OrderNumber") {
@@ -146,29 +167,21 @@ function updateUser(id) {
                     user.UserName = value;
                 } else if (attr == "OrderDate") {
                     user.OrderDate = value;
-                }
-                else if (attr == "RequiredDate") {
+                } else if (attr == "RequiredDate") {
                     user.RequiredDate = value;
-                }
-                else if (attr == "ShippedDate") {
+                } else if (attr == "ShippedDate") {
                     user.ShippedDate = value;
-                }
-                else if (attr == "Email") {
+                } else if (attr == "Email") {
                     user.Email = value;
-                }
-                else if (attr == "Status") {
+                } else if (attr == "Status") {
                     user.Status = value;
-                }
-                else if (attr == "Contact") {
+                } else if (attr == "Contact") {
                     user.Contact = value;
-                }
-                else if (attr == "street") {
+                } else if (attr == "street") {
                     user.street = value;
-                }
-                else if (attr == "city") {
+                } else if (attr == "city") {
                     user.city = value;
-                }
-                else if (attr == "zipcode") {
+                } else if (attr == "zipcode") {
                     user.zipcode = value;
                 }
             });
@@ -176,37 +189,27 @@ function updateUser(id) {
             users.splice(user.id - 1, 0, user);
             $("#userTable #user-" + user.id).children(".userData").each(function () {
                 var attr = $(this).attr("name");
-
                 if (attr == "OrderNumber") {
                     $(this).text(user.OrderNumber);
                 } else if (attr == "UserName") {
                     $(this).text(user.UserName);
-                }
-                else if (attr == "OrderDate") {
+                } else if (attr == "OrderDate") {
                     $(this).text(user.OrderDate);
-                }
-                else if (attr == "RequiredDate") {
+                } else if (attr == "RequiredDate") {
                     $(this).text(user.RequiredDate);
-                }
-                else if (attr == "ShippedDate") {
+                } else if (attr == "ShippedDate") {
                     $(this).text(user.ShippedDate);
-                }
-                else if (attr == "Email") {
+                } else if (attr == "Email") {
                     $(this).text(user.Email);
-                }
-                else if (attr == "Status") {
+                } else if (attr == "Status") {
                     $(this).text(user.Status);
-                }
-                else if (attr == "Contact") {
+                } else if (attr == "Contact") {
                     $(this).text(user.Contact);
-                }
-                else if (attr == "street") {
+                } else if (attr == "street") {
                     $(this).text(user.street);
-                }
-                else if (attr == "city") {
+                } else if (attr == "city") {
                     $(this).text(user.city);
-                }
-                else {
+                } else {
                     $(this).text(user.zipcode);
                 }
             });
@@ -238,10 +241,10 @@ function appendToUsrTable(user) {
     '<td class="userData" name="city">${user.city}</td>
     '<td id="tdZipCode" class="userData" name="OrderDate">${user.zipcode}</td>
     '<td align="center">
-        <button class="btn btn-success form-control" onClick="editUser(${user.id})" data-toggle="modal" data-target="#myModal")">EDIT</button>
+        <button class="btn btn-success" onClick="editUser(${user.id})" data-toggle="modal" data-target="#myModal")">EDIT</button>
     </td>
     <td align="center">
-        <button class="btn btn-danger form-control" onClick="deleteUser(${user.id})">DELETE</button>
+        <button class="btn btn-danger" onClick="deleteUser(${user.id})">DELETE</button>
     </td>
 </tr>
 `);
